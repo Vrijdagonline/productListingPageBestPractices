@@ -3,8 +3,7 @@
 	var page_ll;
 
 	w.lazyLoadOptions = {
-		elements_selector: "img." + lazyClass,
-		threshold: 500
+		elements_selector: "img." + lazyClass
 	};
 
 	const saveInstance = e => {
