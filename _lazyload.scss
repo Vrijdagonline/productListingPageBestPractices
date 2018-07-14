@@ -1,0 +1,12 @@
+img {
+	// Prevents img without src to appear
+	&:not([src]) {
+		visibility: hidden;
+	}
+}
+
+.product-image__b {
+	&.loaded:hover {
+		opacity: 1;
+	}
+}
