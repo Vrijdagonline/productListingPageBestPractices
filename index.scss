@@ -1,0 +1,59 @@
+html {
+	background: grey;
+}
+
+body {
+	max-width: 320px;
+	margin: 0 auto;
+	background: white;
+}
+
+img {
+	display: block;
+	width: 160px;
+	height: 240px;
+	// Prevents img without src to appear
+	&:not([src]) {
+		visibility: hidden;
+	}
+}
+
+ol {
+	padding-left: 1em;
+	li {
+		margin-top: 0.5em;
+	}
+	ol {
+		list-style-type: lower-alpha;
+	}
+}
+
+.intro {
+	padding: 1px 1em;
+}
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.product {
+	position: relative;
+	width: 160px;
+	height: 240px;
+}
+
+.product-image__a,
+.product-image__b {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.product-image__b {
+	opacity: 0;
+	transition: opacity 0.5s;
+	&.loaded:hover {
+		opacity: 1;
+	}
+}

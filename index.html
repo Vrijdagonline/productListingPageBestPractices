@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>LazyLoad + Lazy 2nd Image + Lazy Fade</title>
+	<meta name="Description" content="An optimal usage of LazyLoad both for regular and alternative images loaded at mouseover">
+	<link rel="stylesheet" href="index.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script async src="index.js"></script>
+</head>
+
+<body>
+	<main>
+		<article class="intro">
+			<h1>An optimal usage of LazyLoad both for regular and alternative images loaded at mouseover</h1>
+			<h2>Features:</h2>
+			<ol>
+				<li>Conditional loads LazyLoad v. 8 or 10 depending on IntersectionObserver support</li>
+				<li>Eagerly loads the first 2 images</li>
+				<li>Lazily loads the images from the 3rd on</li>
+				<li>If the user device has a mouse:
+					<ol>
+						<li>Lazily loads the alternative images which appear at mouseover</li>
+						<li>Fade-in effect of the alternative images ONLY after their loading is complete</li>
+					</ol>
+				</li>
+			</ol>
+		</article>
+		<section>
+			<div class="products">
+				<a href="#" class="product">
+					<img alt="1a product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=1a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=1a 1x, https://placehold.it/320x480/7FD1B9/333333?text=1a 2x">
+					<img alt="1b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=1b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=1b 1x, https://placehold.it/320x480/E56399/ffffff?text=1b 2x">
+				</a>
+				<a href="#" class="product">
+					<img alt="2a product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=2a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=2a 1x, https://placehold.it/320x480/7FD1B9/333333?text=2a 2x">
+					<img alt="2b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=2b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=2b 1x, https://placehold.it/320x480/E56399/ffffff?text=2b 2x">
+				</a>
+				<a href="#" class="product">
+					<img alt="3a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=3a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=3a 1x, https://placehold.it/320x480/7FD1B9/333333?text=3a 2x">
+					<img alt="3b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=3b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=3b 1x, https://placehold.it/320x480/E56399/ffffff?text=3b 2x">
+				</a>
+				<a href="#" class="product">
+					<img alt="4a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=4a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=4a 1x, https://placehold.it/320x480/7FD1B9/333333?text=4a 2x">
+					<img alt="4b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=4b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=4b 1x, https://placehold.it/320x480/E56399/ffffff?text=4b 2x">
+				</a>
+				<a href="#" class="product">
+					<img alt="5a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=5a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=5a 1x, https://placehold.it/320x480/7FD1B9/333333?text=5a 2x">
+					<img alt="5b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=5b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=5b 1x, https://placehold.it/320x480/E56399/ffffff?text=5b 2x">
+				</a>
+				<a href="#" class="product">
+					<img alt="6a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=6a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=6a 1x, https://placehold.it/320x480/7FD1B9/333333?text=6a 2x">
+					<img alt="6b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=6b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=6b 1x, https://placehold.it/320x480/E56399/ffffff?text=6b 2x">
+				</a>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>

@@ -1,2 +1,3 @@
-# lazyHoverImage
-An optimal usage of LazyLoad both for regular and alternetive images loaded at mouseover
+# Lazy MouseOver Image
+
+An optimal usage of LazyLoad both for regular and alternative images loaded at mouseover
