@@ -5,8 +5,8 @@ img {
 	}
 }
 
-.product-image__b {
-	&.loaded:hover {
+.product:hover {
+	.product-image__b.loaded {
 		opacity: 1;
 	}
 }

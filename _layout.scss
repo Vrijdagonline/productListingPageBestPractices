@@ -1,3 +1,12 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 $imgWidth: 160px;
 $imgHeight: 240px;
 
@@ -6,15 +15,9 @@ html {
 }
 
 body {
-	max-width: $imgWidth * 4;
+	max-width: 1024px;
 	margin: 0 auto;
 	background: white;
-}
-
-img {
-	display: block;
-	width: $imgWidth;
-	height: $imgHeight;
 }
 
 .intro {
@@ -27,19 +30,25 @@ img {
 }
 
 .product {
+	display: block;
 	position: relative;
-	width: $imgWidth;
-	height: $imgHeight;
+	width: 50%;
+	text-align: center;
+	img {
+		display: block;
+		width: $imgWidth;
+		height: $imgHeight;
+	}
 }
 
-.product-image__a,
-.product-image__b {
-	position: absolute;
-	top: 0;
-	left: 0;
+.product-image__a {
+	margin: 0 auto;
 }
 
 .product-image__b {
 	opacity: 0;
 	transition: opacity 0.5s;
+	position: absolute;
+	top: 0;
+	left: calc(50% - #{$imgWidth} / 2);
 }
