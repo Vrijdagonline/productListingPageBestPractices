@@ -17,8 +17,8 @@
 			<h2>Features:</h2>
 			<ol>
 				<li>Conditional loads LazyLoad v. 8 or 10 depending on IntersectionObserver support</li>
-				<li>Eagerly loads the first 2 images</li>
-				<li>Lazily loads the images from the 3rd on</li>
+				<li>Eagerly loads the first 8 images</li>
+				<li>Lazily loads the images from the 9th on</li>
 				<li>If the user device has a mouse:
 					<ol>
 						<li>Lazily loads the alternative images which appear at mouseover</li>
@@ -29,6 +29,7 @@
 		</article>
 		<section>
 			<div class="products">
+				<!-- Eagerly loading 8 -->
 				<a href="#" class="product">
 					<img alt="01a" class="product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=01a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=01a 1x, https://placehold.it/320x480/7FD1B9/333333?text=01a 2x">
 					<img alt="01b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=01b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=01b 1x, https://placehold.it/320x480/E56399/ffffff?text=01b 2x">
@@ -38,27 +39,27 @@
 					<img alt="02b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=02b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=02b 1x, https://placehold.it/320x480/E56399/ffffff?text=02b 2x">
 				</a>
 				<a href="#" class="product">
-					<img alt="03a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=03a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=03a 1x, https://placehold.it/320x480/7FD1B9/333333?text=03a 2x">
+					<img alt="03a" class="product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=03a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=03a 1x, https://placehold.it/320x480/7FD1B9/333333?text=03a 2x">
 					<img alt="03b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=03b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=03b 1x, https://placehold.it/320x480/E56399/ffffff?text=03b 2x">
 				</a>
 				<a href="#" class="product">
-					<img alt="04a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=04a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=04a 1x, https://placehold.it/320x480/7FD1B9/333333?text=04a 2x">
+					<img alt="04a" class="product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=04a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=04a 1x, https://placehold.it/320x480/7FD1B9/333333?text=04a 2x">
 					<img alt="04b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=04b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=04b 1x, https://placehold.it/320x480/E56399/ffffff?text=04b 2x">
 				</a>
 				<a href="#" class="product">
-					<img alt="05a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=05a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=05a 1x, https://placehold.it/320x480/7FD1B9/333333?text=05a 2x">
+					<img alt="05a" class="product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=05a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=05a 1x, https://placehold.it/320x480/7FD1B9/333333?text=05a 2x">
 					<img alt="05b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=05b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=05b 1x, https://placehold.it/320x480/E56399/ffffff?text=05b 2x">
 				</a>
 				<a href="#" class="product">
-					<img alt="06a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=06a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=06a 1x, https://placehold.it/320x480/7FD1B9/333333?text=06a 2x">
+					<img alt="06a" class="product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=06a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=06a 1x, https://placehold.it/320x480/7FD1B9/333333?text=06a 2x">
 					<img alt="06b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=06b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=06b 1x, https://placehold.it/320x480/E56399/ffffff?text=06b 2x">
 				</a>
 				<a href="#" class="product">
-					<img alt="07a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=07a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=07a 1x, https://placehold.it/320x480/7FD1B9/333333?text=07a 2x">
+					<img alt="07a" class="product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=07a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=07a 1x, https://placehold.it/320x480/7FD1B9/333333?text=07a 2x">
 					<img alt="07b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=07b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=07b 1x, https://placehold.it/320x480/E56399/ffffff?text=07b 2x">
 				</a>
 				<a href="#" class="product">
-					<img alt="08a" class="lazy product-image__a" data-src="https://placehold.it/160x240/7FD1B9/333333?text=08a" data-srcset="https://placehold.it/160x240/7FD1B9/333333?text=08a 1x, https://placehold.it/320x480/7FD1B9/333333?text=08a 2x">
+					<img alt="08a" class="product-image__a" src="https://placehold.it/160x240/7FD1B9/333333?text=08a" srcset="https://placehold.it/160x240/7FD1B9/333333?text=08a 1x, https://placehold.it/320x480/7FD1B9/333333?text=08a 2x">
 					<img alt="08b" class="lazy-hover product-image__b" data-src="https://placehold.it/160x240/E56399/ffffff?text=08b" data-srcset="https://placehold.it/160x240/E56399/ffffff?text=08b 1x, https://placehold.it/320x480/E56399/ffffff?text=08b 2x">
 				</a>
 				<!-- 8 more! -->
