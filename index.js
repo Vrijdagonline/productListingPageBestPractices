@@ -1,10 +1,19 @@
 (function(w, d) {
-	const lazyClass = "lazy";
+	//
+	// LazyLoad's callbacks, options and injection
+
 	var page_ll;
 
-	const saveInstance = e => {
-		page_ll = e.detail.instance;
-		w.removeEventListener("LazyLoad::Initialized", saveInstance);
+	const lazyLoadHandlers = {
+		callback_load: img => {
+			console.log("LOADED", img.getAttribute("data-srcset"));
+		},
+		callback_enter: img => {
+			console.log("ENTERED", img.getAttribute("data-srcset"));
+		},
+		callback_error: img => {
+			console.log("ERROR", img.getAttribute("data-srcset"));
+		}
 	};
 
 	const injectLazyLoadScript = () => {
@@ -16,6 +25,21 @@
 		w.addEventListener("LazyLoad::Initialized", saveInstance, false);
 		b.appendChild(s);
 	};
+
+	const saveInstance = e => {
+		page_ll = e.detail.instance;
+		w.removeEventListener("LazyLoad::Initialized", saveInstance);
+	};
+
+	w.lazyLoadOptions = {
+		elements_selector: "img.lazy",
+		...lazyLoadHandlers
+	};
+
+	injectLazyLoadScript();
+
+	//
+	// Page events handlers
 
 	const mouseoverHandler = event => {
 		var product = event.currentTarget;
@@ -37,23 +61,5 @@
 		w.removeEventListener("mousemove", initializeMouseEvents, false);
 	};
 
-	const lazyLoadHandlers = {
-		callback_load: img => {
-			console.log("LOADED", img.getAttribute("data-srcset"));
-		},
-		callback_enter: img => {
-			console.log("ENTERED", img.getAttribute("data-srcset"));
-		},
-		callback_error: img => {
-			console.log("ERROR", img.getAttribute("data-srcset"));
-		}
-	};
-
-	w.lazyLoadOptions = {
-		elements_selector: "img." + lazyClass,
-		...lazyLoadHandlers
-	};
-
 	w.addEventListener("mousemove", initializeMouseEvents, false);
-	injectLazyLoadScript();
 })(window, document);
