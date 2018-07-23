@@ -1,8 +1,8 @@
-(function(w, d) {
+var PAGE_LAZYLOAD; // GLOBAL page lazyload instance
+
+(function() {
 	//
 	// LazyLoad's callbacks, options and injection
-
-	var page_ll;
 
 	const lazyLoadHandlers = {
 		callback_load: img => {
@@ -17,49 +17,53 @@
 	};
 
 	const injectLazyLoadScript = () => {
-		var v = !("IntersectionObserver" in w) ? "8.11.0" : "10.10.0";
-		var b = d.getElementsByTagName("body")[0];
-		var s = d.createElement("script");
-		s.async = true;
-		s.src = `https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/${v}/lazyload.min.js`;
-		w.addEventListener("LazyLoad::Initialized", saveInstance, false);
-		b.appendChild(s);
+		var version = !("IntersectionObserver" in window)
+			? "8.11.0"
+			: "10.10.0";
+		var body = document.getElementsByTagName("body")[0];
+		var script = document.createElement("script");
+		script.async = true;
+		script.src = `https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/${version}/lazyload.min.js`;
+		window.addEventListener("LazyLoad::Initialized", saveInstance, false);
+		body.appendChild(script);
 	};
 
 	const saveInstance = e => {
-		page_ll = e.detail.instance;
-		w.removeEventListener("LazyLoad::Initialized", saveInstance);
+		PAGE_LAZYLOAD = e.detail.instance;
+		window.removeEventListener("LazyLoad::Initialized", saveInstance);
 	};
 
-	w.lazyLoadOptions = {
+	window.lazyLoadOptions = {
 		elements_selector: "img.lazy",
 		...lazyLoadHandlers
 	};
 
 	injectLazyLoadScript();
+})();
 
+(function() {
 	//
 	// Page events handlers
 
-	const mouseoverHandler = event => {
-		var product = event.currentTarget;
-		var lazyImg = product.querySelector(".lazy-hover");
-		page_ll.load(lazyImg);
+	var $window = $(window);
+
+	const mouseoverHandler = function() {
+		var lazyImg = $(this).find(".lazy-hover")[0];
+		PAGE_LAZYLOAD.load(lazyImg);
 	};
 
 	const listenToMouseover = () => {
-		const products = document.querySelectorAll(".product");
-		products.forEach(product => {
-			console.log("Adding a listener for mouseover to --> ", product);
-			product.addEventListener("mouseover", mouseoverHandler, true);
-		});
+		console.log("Adding a single listener for mouseover to all products");
+		$(".products").on("mouseover", ".product", mouseoverHandler);
 	};
 
 	const initializeMouseEvents = () => {
 		console.log("Mouse detected. Initializing mouse events.");
 		listenToMouseover();
-		w.removeEventListener("mousemove", initializeMouseEvents, false);
+		$window.off("mousemove", initializeMouseEvents);
 	};
 
-	w.addEventListener("mousemove", initializeMouseEvents, false);
-})(window, document);
+	$(function() {
+		$window.on("mousemove", initializeMouseEvents);
+	});
+})();
