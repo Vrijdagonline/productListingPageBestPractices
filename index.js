@@ -19,7 +19,7 @@ var PAGE_LAZYLOAD; // GLOBAL page lazyload instance
 	const injectLazyLoadScript = () => {
 		var version = !("IntersectionObserver" in window)
 			? "8.11.0"
-			: "10.10.0";
+			: "10.11.0";
 		var body = document.getElementsByTagName("body")[0];
 		var script = document.createElement("script");
 		script.async = true;
