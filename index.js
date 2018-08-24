@@ -60,10 +60,9 @@ var PAGE_LAZYLOAD; // GLOBAL page lazyload instance
 	const initializeMouseEvents = () => {
 		console.log("Mouse detected. Initializing mouse events.");
 		listenToMouseover();
-		$window.off("mousemove", initializeMouseEvents);
 	};
 
 	$(function() {
-		$window.on("mousemove", initializeMouseEvents);
+		$window.one("mousemove", initializeMouseEvents);
 	});
 })();
